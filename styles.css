@@ -726,8 +726,32 @@ a {
   background-color: rgba(14, 30, 56, 0.92);
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 25px 55px -10px rgba(0, 0, 0, 0.65);
+}
+
+.origin-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s var(--ease-out-expo), filter 0.5s ease;
+}
+
+.floating-frame:hover .origin-media-img {
+  transform: scale(1.05);
+}
+
+.origin-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 47, 0.12) 0%,
+    rgba(10, 25, 47, 0.0) 50%,
+    rgba(6, 16, 31, 0.55) 100%
+  );
+  pointer-events: none;
 }
 
 .media-placeholder {
@@ -842,12 +866,16 @@ a {
 /* Columna Derecha: Lectura y Línea de Tiempo */
 .lead-paragraph {
   margin-top: 1.5rem;
-  margin-bottom: 2.75rem;
-  font-size: clamp(1.08rem, 1.35vw, 1.22rem);
+  margin-bottom: 2.5rem;
+  font-size: clamp(1.05rem, 1.28vw, 1.16rem);
   font-weight: 500;
   color: var(--white);
-  padding-left: 1.25rem;
-  border-left: 3px solid var(--white);
+  padding: 1.45rem 1.65rem;
+  background-color: rgba(8, 20, 38, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 4px solid var(--steel-bright);
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
 }
 
 .origin-timeline {
